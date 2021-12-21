@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+        //Вычисление факториала
+        function factorial(val){
+                var fact = 1
+                for(var k=1;k<=val;k++){
+                    fact*=k
+                }
+                return fact;
+            }
+            //Вычисление значения функции
+		function iteration(){
+			var cycle = Number(document.getElementById('cycle').value);
+            var x = Number(document.getElementById('x').value);
+            var result = 1 - x;
+            for(var i=2;i<cycle+2;i++){
+                if(i%2==1){
+                    result-=(Math.pow(x,i))/(factorial(i));
+                }
+                else{
+                    result+=(Math.pow(x,i))/(factorial(i));
+                }
+            }
+            document.writeln("Ответ: " + result);
+		}
+	</script>
+</head>
+<form onsubmit="iteration()">
+    <p>Введите количество итераций</p>
+	<p><input type="text" id="cycle" value="2"></p>
+	<p>Введите x</p>
+	<p><input type ="text" id="x" value="5"></p>
+	<p><input type="submit"></p>
+</form>
+<body>
+
+</body>
+</html>
